@@ -47,14 +47,6 @@ for (repo in repos)
 
 ```
 
-The multibranch pipeline job actually look like folders in the overview:
-
-![image](https://cloud.githubusercontent.com/assets/365744/22827495/81d87e20-ef98-11e6-8e42-42b7a5678033.png)
-
-Once you navigate to a specific multibranch pipeline job, you see the individual jobs which are being automatically generated for each of the matching branch patterns:
-
-![image](https://cloud.githubusercontent.com/assets/365744/22827681/6372e2a8-ef99-11e6-95db-4155a650e460.png)
-
 Once a build is started, it will look for a `Jenkinsfile` and run the build pipeline that is defined therein (see [my-company-monolithic-web](https://github.com/ivans-innovation-lab/my-company-monolithic-web)).
 
 
