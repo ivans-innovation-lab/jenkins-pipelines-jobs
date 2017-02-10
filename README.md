@@ -1,20 +1,20 @@
 
 # Jenkins Pipes Jobs
 
-Repo containing the job definitions for the [Jenkins Pipes](https://github.com/tknerr/jenkins-pipes-infra) demo:
+Repo containing the job definitions for the [Jenkins Pipes](https://github.com/ivans-innovation-lab/jenkins-pipelines-infrastructure) demo:
 
  * it uses [Job-DSL](https://github.com/jenkinsci/job-dsl-plugin/wiki) to describe **WHAT** (i.e. which repos) to build
  * the **HOW** to build is defined in each of the referenced repo's `Jenkinsfile`s
 
 ## How it works
 
-There is a [seed-job](https://github.com/tknerr/jenkins-pipes-infra/blob/master/seedJob.xml) which runs every minute and applies the job-dsl scripts in all the `*.groovy` files within this repository.
+There is a [seed-job](https://github.com/ivans-innovation-lab/jenkins-pipelines-infrastructure/blob/master/seedJob.xml) which runs every minute and applies the job-dsl scripts in all the `*.groovy` files within this repository.
 
-The [`ci_jobs.groovy`](https://github.com/tknerr/jenkins-pipes-jobs/blob/master/ci_jobs.groovy) sets up the CI build jobs for our demo project. Currently there is only a single repo, but the list could easily be extended:
+The [`ci_jobs.groovy`](https://github.com/ivans-innovation-lab/jenkins-pipelines-jobs/blob/master/ci_jobs.groovy) sets up the CI build jobs for our demo project. Currently there is only a single repo, but the list could easily be extended:
 
 ```groovy
 // define the repos we want to build on CI
-def repos = [ 'jenkins-pipes-helloworld' ]
+def repos = [ 'my-company-monolithic-web' ]
 ```
 
 It then loops over all the repos and creates a [multibranchPipelineJob](https://jenkinsci.github.io/job-dsl-plugin/#method/javaposse.jobdsl.dsl.DslFactory.multibranchPipelineJob) (building both `master` and `feature/*` branches) for each of them:
@@ -28,7 +28,7 @@ for (repo in repos)
     // build master as well as feature branches
     branchSources {
       git {
-        remote("https://github.com/tknerr/${repo}.git")
+        remote("https://github.com/ivans-innovation-lab/${repo}.git")
         includes("master feature/*")
       }
     }
@@ -55,7 +55,7 @@ Once you navigate to a specific multibranch pipeline job, you see the individual
 
 ![image](https://cloud.githubusercontent.com/assets/365744/22827681/6372e2a8-ef99-11e6-95db-4155a650e460.png)
 
-Once a build is started, it will look for a `Jenkinsfile` and run the build pipeline that is defined therein (see [jenkins-pipes-helloworld](https://github.com/tknerr/jenkins-pipes-helloworld)).
+Once a build is started, it will look for a `Jenkinsfile` and run the build pipeline that is defined therein (see [my-company-monolithic-web](https://github.com/ivans-innovation-lab/my-company-monolithic-web)).
 
 
 ## Where to go from here?
