@@ -1,6 +1,6 @@
 
 // define the repos we want to build on CI
-def repos = [ 'jenkins-pipes-helloworld' ]
+def repos = [ 'my-company-monolithic-web' ]
 
 // create a multibranch pipeline job for each of the repos
 for (repo in repos)
@@ -10,7 +10,7 @@ for (repo in repos)
     // build master as well as feature branches 
     branchSources {
       git {
-        remote("https://github.com/tknerr/${repo}.git")
+        remote("https://github.com/ivans-innovation-lab/${repo}.git")
         includes("master feature/*")
       }
     }
