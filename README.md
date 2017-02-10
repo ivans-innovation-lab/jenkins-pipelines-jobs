@@ -1,7 +1,7 @@
 
-# Jenkins Pipes Jobs
+# Jenkins Pipelines Jobs
 
-Repo containing the job definitions for the [Jenkins Pipes](https://github.com/ivans-innovation-lab/jenkins-pipelines-infrastructure) demo:
+Repo containing the job definitions for the [Jenkins Pipelines](https://github.com/ivans-innovation-lab/jenkins-pipelines-infrastructure) demo:
 
  * it uses [Job-DSL](https://github.com/jenkinsci/job-dsl-plugin/wiki) to describe **WHAT** (i.e. which repos) to build
  * the **HOW** to build is defined in each of the referenced repo's `Jenkinsfile`s
