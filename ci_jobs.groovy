@@ -11,6 +11,7 @@ for (repo in repos)
     branchSources {
       git {
         remote("https://github.com/ivans-innovation-lab/${repo}.git")
+        credentialsId('git')
         includes("master feature/*")
       }
     }
