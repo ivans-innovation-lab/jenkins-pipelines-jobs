@@ -1,17 +1,15 @@
 
 # Jenkins Pipelines Jobs
 
-Repo containing the job definitions for the [Jenkins Pipelines](https://github.com/ivans-innovation-lab/jenkins-pipelines-infrastructure) demo:
-
+Repository containing the job definitions for the [Jenkins Pipelines](https://github.com/ivans-innovation-lab/jenkins-pipelines-infrastructure):
  * it uses [Job-DSL](https://github.com/jenkinsci/job-dsl-plugin/wiki) to describe **WHAT** (i.e. which repos) to build
  * the **HOW** to build is defined in each of the referenced repo's `Jenkinsfile`s
 
 ## How it works
 
-There is a [seed-job](https://github.com/ivans-innovation-lab/jenkins-pipelines-infrastructure/blob/master/seedJob.xml) which runs every minute and applies the job-dsl scripts in all the `*.groovy` files within this repository.
+There is a [seed-job](https://github.com/ivans-innovation-lab/jenkins-pipelines-infrastructure/blob/master/seedJob.xml)configured within  infrastructure repository which runs every minute and applies the job-dsl scripts in all the `*.groovy` files within this repository.
 
-The [`ci_jobs.groovy`](https://github.com/ivans-innovation-lab/jenkins-pipelines-jobs/blob/master/ci_jobs.groovy) sets up the CI build jobs for our demo project. Currently there is only a single repo, but the list could easily be extended:
-
+The [`ci_jobs.groovy`](https://github.com/ivans-innovation-lab/jenkins-pipelines-jobs/blob/master/ci_jobs.groovy) sets up the CI build jobs for our projects. Currently
 ```groovy
 // define the repos we want to build on CI
 def repos = [ 'my-company-monolithic-web' ]
