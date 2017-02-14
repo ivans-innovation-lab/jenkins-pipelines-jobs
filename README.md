@@ -7,9 +7,9 @@ Repository containing the job definitions for the [Jenkins Pipelines](https://gi
 
 ## How it works
 
-There is a [seed-job](https://github.com/ivans-innovation-lab/jenkins-pipelines-infrastructure/blob/master/seedJob.xml)configured within  infrastructure repository which runs every minute and applies the job-dsl scripts in all the `*.groovy` files within this repository.
+There is a [seed-job](https://github.com/ivans-innovation-lab/jenkins-pipelines-infrastructure/blob/master/seedJob.xml) configured within  infrastructure repository which runs every minute and applies the job-dsl scripts in all the `*.groovy` files within this repository.
 
-The [`ci_jobs.groovy`](https://github.com/ivans-innovation-lab/jenkins-pipelines-jobs/blob/master/ci_jobs.groovy) sets up the CI build jobs for our projects. Currently
+The [`ci_jobs.groovy`](https://github.com/ivans-innovation-lab/jenkins-pipelines-jobs/blob/master/ci_jobs.groovy) sets up the CI build jobs for our projects.
 ```groovy
 // define the repos we want to build on CI
 def repos = [ 'my-company-monolithic-web' ]
