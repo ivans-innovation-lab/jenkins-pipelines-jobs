@@ -12,7 +12,7 @@ There is a [seed-job](https://github.com/ivans-innovation-lab/jenkins-pipelines-
 The [`ci_jobs.groovy`](https://github.com/ivans-innovation-lab/jenkins-pipelines-jobs/blob/master/ci_jobs.groovy) sets up the CI build jobs for our projects.
 ```groovy
 // define the repos we want to build on CI
-def repos = [ 'my-company-monolithic-web' ]
+def repos = [ 'my-company-common','my-company-project-materialized-view','my-company-project-domain','my-company-blog-materialized-view','my-company-blog-domain','my-company-monolithic-web' ]
 ```
 
 It then loops over all the repos and creates a [multibranchPipelineJob](https://jenkinsci.github.io/job-dsl-plugin/#method/javaposse.jobdsl.dsl.DslFactory.multibranchPipelineJob) (building both `master` and `feature/*` branches) for each of them:
@@ -27,6 +27,7 @@ for (repo in repos)
     branchSources {
       git {
         remote("https://github.com/ivans-innovation-lab/${repo}.git")
+        credentialsId('git')
         includes("master feature/*")
       }
     }
