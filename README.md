@@ -7,9 +7,9 @@ Repository containing the job definitions for the [Jenkins Pipelines](https://gi
 
 ## How it works
 
-There is a [seed-job](https://github.com/ivans-innovation-lab/jenkins-pipelines-infrastructure/blob/master/seedJob.xml) configured within  infrastructure repository which runs every minute and applies the job-dsl scripts in all the `*.groovy` files within this repository.
+There is a [seed-job](https://github.com/ivans-innovation-lab/my-company-infrastructure/blob/master/seedJob.xml) configured within  infrastructure repository which runs every minute and applies the job-dsl scripts in all the `*.groovy` files within this repository.
 
-The [`ci_jobs.groovy`](https://github.com/ivans-innovation-lab/jenkins-pipelines-jobs/blob/master/ci_jobs.groovy) sets up the CI build jobs/pipelines for our projects.
+The [`ci_jobs.groovy`](https://github.com/ivans-innovation-lab/my-company-ci-jobs/blob/master/ci_jobs.groovy) sets up the CI build jobs/pipelines for our projects.
 ```groovy
 // define the repos we want to build on CI
 def repos = [ 'my-company-common','my-company-project-materialized-view','my-company-project-domain','my-company-blog-materialized-view','my-company-blog-domain','my-company-monolith' ]
@@ -46,7 +46,7 @@ for (repo in repos)
 
 ```
 
-Once a build is started, it will look for a `Jenkinsfile` and run the build pipeline that is defined therein (see [my-company-monolithic-web](https://github.com/ivans-innovation-lab/my-company-monolithic-web)).
+Once a build is started, it will look for a `Jenkinsfile` and run the build pipeline that is defined therein (see [my-company-monolithic-web](https://github.com/ivans-innovation-lab/my-company-monolith)).
 
 
 ## Where to go from here?
