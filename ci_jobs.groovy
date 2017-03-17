@@ -13,8 +13,8 @@ for (repo in repos)
         credentialsId('git')
         includes("master feature/*")
         configure { git ->
-          git / 'sources class=\"jenkins.branch.MultiBranchProject$BranchSourceList\"' / 'data' / 'jenkins.branch.BranchSource' / 'source class=\"jenkins.plugins.git.GitSCMSource\"' / 'extensions'  << 'hudson.plugins.git.extensions.impl.UserExclusion' {
-            excludedUsers('idugalic')
+          git / 'sources class=\"jenkins.branch.MultiBranchProject\$BranchSourceList\"' / 'data' / 'jenkins.branch.BranchSource' / 'source class=\"jenkins.plugins.git.GitSCMSource\"' / 'extensions'  << 'hudson.plugins.git.extensions.impl.UserExclusion' {
+            excludedUsers('idugalic2')
           }        
         }
       }
