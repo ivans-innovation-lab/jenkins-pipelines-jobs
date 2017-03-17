@@ -23,9 +23,8 @@ for (repo in repos)
         credentialsId('git')
         includes("master feature/*")
         configure { gitScm ->
-          gitScm / 'extensions' << 'hudson.plugins.git.extensions.impl.PathRestriction' {
-            includedRegions('foo')
-            excludedRegions('bar')
+          gitScm / 'extensions' << 'hudson.plugins.git.extensions.impl.UserExclusion' {
+            excludedUsers('jenkins')
           }        
         }
       }
