@@ -13,11 +13,12 @@ for (repo in repos)
         remote("https://github.com/ivans-innovation-lab/${repo}.git")
         credentialsId('git')
         includes("master feature/*")
-        configure { gitscm ->
-                gitscm / 'extensions' << 'hudson.plugins.git.extensions.impl.SubmoduleOption' {
-                    recursiveSubmodules(true)
-                }
-            }
+        configure { gitScm ->
+          gitScm / 'extensions' << 'hudson.plugins.git.extensions.impl.PathRestriction' {
+            includedRegions('foo')
+            excludedRegions('bar')
+          }        
+        }
       }
       
     }
