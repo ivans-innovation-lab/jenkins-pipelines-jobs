@@ -6,16 +6,6 @@ def repos = [ 'my-company-common','my-company-project-materialized-view','my-com
 for (repo in repos)
 {
   multibranchPipelineJob("${repo}") {
-    
-    scm{
-      configure { gitScm ->
-          gitScm / 'extensions' << 'hudson.plugins.git.extensions.impl.PathRestriction' {
-            includedRegions('foo')
-            excludedRegions('bar')
-          }    
-      }
-    }
-
     // build master as well as feature branches 
     branchSources {
       git {
