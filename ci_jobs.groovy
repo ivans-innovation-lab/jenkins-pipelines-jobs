@@ -14,9 +14,7 @@ for (repo in repos)
         credentialsId('git')
         includes("master feature/*")
       }
-       extensions {
-                localBranch('master')
-            }
+      
     }
     // check every minute for scm changes as well as new / deleted branches
     triggers {
