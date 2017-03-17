@@ -27,16 +27,25 @@ for (repo in repos)
       }
     }
   }
+  
+  job("${repo}") {
+    scm {
+        git {
+            remote {
+                name("${repo}")
+                url("https://github.com/ivans-innovation-lab/${repo}.git")
+            }
+            extensions {
+                localBranch("master")
+            }
+        }
+    }
+}
+
   // automatically queue the job after the initial creation
   if (!jenkins.model.Jenkins.instance.getItemByFullName("${repo}")) {
     queue("${repo}")
   }
-  scm {
-        git {
-            extensions {
-                localBranch('master')
-            }
-        }
-    }
+  
 }
 
