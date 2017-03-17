@@ -28,15 +28,15 @@ for (repo in repos)
     }
   }
   
-  job("${repo}") {
+  job('${repo}') {
     scm {
         git {
             remote {
-                name("${repo}")
-                url("https://github.com/ivans-innovation-lab/${repo}.git")
+                name('tezt')
+                url('https://github.com/ivans-innovation-lab/${repo}.git')
             }
             extensions {
-                localBranch("master")
+                localBranch('master')
             }
         }
     }
