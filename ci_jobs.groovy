@@ -13,6 +13,9 @@ for (repo in repos)
         remote("https://github.com/ivans-innovation-lab/${repo}.git")
         credentialsId('git')
         includes("master feature/*")
+        extensions {
+                localBranch('master')
+            }
       }
     }
     // check every minute for scm changes as well as new / deleted branches
