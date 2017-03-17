@@ -24,7 +24,7 @@ for (repo in repos)
         includes("master feature/*")
         configure { gitScm ->
           gitScm / 'extensions' << 'hudson.plugins.git.extensions.impl.UserExclusion' {
-            excludedUsers('jenkins')
+            excludedUsers('idugalic')
           }        
         }
       }
