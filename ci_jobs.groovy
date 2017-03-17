@@ -13,7 +13,7 @@ for (repo in repos)
         credentialsId('git')
         includes("master feature/*")
         configure { git ->
-          git / 'extensions' << 'hudson.plugins.git.extensions.impl.UserExclusion' {
+          git / 'data' / 'jenkins.branch.BranchSource' / 'extensions'  << 'hudson.plugins.git.extensions.impl.UserExclusion' {
             excludedUsers('idugalic')
           }        
         }
