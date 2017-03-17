@@ -13,7 +13,7 @@ for (repo in repos)
             includedRegions('foo')
             excludedRegions('bar')
           }    
-      
+      }
     }
 
     // build master as well as feature branches 
