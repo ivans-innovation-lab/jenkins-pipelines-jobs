@@ -31,5 +31,12 @@ for (repo in repos)
   if (!jenkins.model.Jenkins.instance.getItemByFullName("${repo}")) {
     queue("${repo}")
   }
+  scm {
+        git {
+            extensions {
+                localBranch('master')
+            }
+        }
+    }
 }
 
