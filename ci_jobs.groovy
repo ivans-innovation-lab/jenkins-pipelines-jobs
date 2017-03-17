@@ -15,7 +15,7 @@ for (repo in repos)
         configure { git ->
           git / 'sources' / 'data' << 'jenkins.branch.BranchSource' { 'source' { 'extensions'  { 'hudson.plugins.git.extensions.impl.UserExclusion' {
             excludedUsers('idugalic2')
-          }        }}
+          }        }}}
         }
       }
       
