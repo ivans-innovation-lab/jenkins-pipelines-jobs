@@ -1,3 +1,7 @@
+import org.xml.sax.SAXException;
+import org.w3c.dom.*;
+import javax.xml.parsers.*;
+import java.io.IOException;
 
 // define the repos we want to build on CI
 def repos = [ 'my-company-common','my-company-project-materialized-view','my-company-project-domain','my-company-blog-materialized-view','my-company-blog-domain','my-company-monolith' ]
