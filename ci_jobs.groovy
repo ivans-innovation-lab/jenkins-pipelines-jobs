@@ -13,10 +13,10 @@ for (repo in repos)
         credentialsId('git')
         includes("master feature/*")
         configure { project -> 
-            def branches = project / 'sources'
-            def branch = branches.getAt("1")
-            println branch.getClass()
-            branch.getTet()
+            def branches = (project / 'sources' / 'data' /'jenkins.branch.BranchSource')
+            def branch = branches.getAt("0")
+            branch.getSource()
+            
               
          }
       }
