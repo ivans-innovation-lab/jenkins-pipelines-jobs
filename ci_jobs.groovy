@@ -13,9 +13,13 @@ for (repo in repos)
         credentialsId('git')
         includes("master feature/*")
         configure { project -> 
-            def branches = (project / 'sources' / 'data' /'jenkins.branch.BranchSource')
+            def branches = (project / 'sources' / 'data')
+            for(int i = 0 ; i < branches.getLength();i++) {
+              Element el = (Element) branches.item(i);
+              System.out.println(el.getTextContent());
+            }
             def branch = branches.getAt("0")
-            println branch.text()
+           System.out.println(branch.getTextContent());
             
               
          }
