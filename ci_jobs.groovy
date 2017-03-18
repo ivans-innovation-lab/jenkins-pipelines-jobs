@@ -14,7 +14,7 @@ for (repo in repos)
         includes("master feature/*")
         configure { project -> 
             def branches = (project / 'sources' / 'data' /'jenkins.branch.BranchSource')
-            def branch = branches.getAt(0)
+            def branch = branches.getAt("0")
             branch.getTet()
               
          }
