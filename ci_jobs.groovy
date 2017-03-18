@@ -12,6 +12,9 @@ for (repo in repos)
         remote("https://github.com/ivans-innovation-lab/${repo}.git")
         credentialsId('git')
         includes("master feature/*")
+        configure {
+           'sources' / 'data' / 'jenkins.branch.BranchSource'[0] / 'source' / 'extensions'  << 'hudson.plugins.git.extensions.impl.UserExclusion' {
+              excludedUsers('idugalic')
       }
       
     }
