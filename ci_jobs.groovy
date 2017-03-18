@@ -13,8 +13,8 @@ for (repo in repos)
         credentialsId('git')
         includes("master feature/*")
         configure { project -> 
-            def branches = (project / 'sources')
-            def branch = branches.getAt("0")
+            def branches = project / 'sources'
+            def branch = branches.getAt("1")
             println branch.getClass()
             branch.getTet()
               
