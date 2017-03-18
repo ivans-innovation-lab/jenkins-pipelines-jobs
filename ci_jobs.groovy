@@ -16,7 +16,7 @@ for (repo in repos)
             excludedUsers('idugalic')
           }       
          }
-      
+      }
     }
     // check every minute for scm changes as well as new / deleted branches
     triggers {
