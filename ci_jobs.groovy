@@ -16,17 +16,6 @@ for (repo in repos)
         remote("https://github.com/ivans-innovation-lab/${repo}.git")
         credentialsId('git')
         includes("master feature/*")
-        configure { project -> 
-            def branches = (project / 'sources' / 'data' /'jenkins.branch.BranchSource')
-            for(int i = 0 ; i < branches.getLength();i++) {
-              Element el = (Element) branches.item(i);
-              System.out.println(el.getTextContent());
-            }
-            def branch = branches.getAt("0")
-           System.out.println(branch.getTextContent());
-            
-              
-         }
       }
     }
     // check every minute for scm changes as well as new / deleted branches
