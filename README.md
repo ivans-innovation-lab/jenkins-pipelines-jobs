@@ -1,13 +1,13 @@
 
 # Jenkins Jobs
 
-Repository containing the job (pipeline) definitions for the [Jenkins server](https://github.com/ivans-innovation-lab/my-company-infrastructure):
+Repository containing the job definitions for the [Jenkins server](https://github.com/ivans-innovation-lab/my-company-infrastructure):
  * it uses [Job-DSL](https://github.com/jenkinsci/job-dsl-plugin/wiki) to describe **WHAT** (i.e. which repos) to build
  * the **HOW** to build is defined in each of the referenced repo's `Jenkinsfile`s
 
 ## How it works
 
-There is a [seed-job](https://github.com/ivans-innovation-lab/my-company-infrastructure/blob/master/seedJob.xml) configured within  infrastructure repository which runs every minute and applies the job-dsl scripts in all the `*.groovy` files within this repository.
+There is a [seed-job](https://github.com/ivans-innovation-lab/my-company-infrastructure/blob/master/seedJob.xml) configured in ['my-company-infrastructure' repository](https://github.com/ivans-innovation-lab/my-company-infrastructure) which runs every minute and applies the job-dsl scripts in all the `*.groovy` files within this repository.
 
 The [`ci_jobs.groovy`](https://github.com/ivans-innovation-lab/my-company-ci-jobs/blob/master/ci_jobs.groovy) sets up the CI build jobs/pipelines for our projects.
 ```groovy
